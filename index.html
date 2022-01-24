@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>step form</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <form id="form1">
+        <h2>creat account</h2>
+        <label>
+            <input type="email" placeholder="email" required>
+        </label>
+        <label>
+            <input type="password" placeholder="password" required>
+        </label>
+        <label>
+            <input type="password" placeholder="confirm password" required>
+        </label>
+        <div class="btn">
+            <button type="button" id="next1">next</button>
+        </div>
+    </form>
+    <form id="form2">
+        <h2>social links</h2>
+        <label>
+            <input type="text" placeholder="github" required>
+        </label>
+        <label>
+            <input type="text" placeholder="linkedin" required>
+        </label>
+        <label>
+            <input type="text" placeholder="medium" required>
+        </label>
+        <div class="btn">
+            <button type="button" id="back1">back</button>
+            <button type="button" id="next2">next</button>
+        </div>
+    </form>
+    <form id="form3">
+        <h2>personal info</h2>
+        <label>
+            <input type="text" placeholder="first name" required>
+        </label>
+        <label>
+            <input type="email" placeholder="last name" required>
+        </label>
+        <label>
+            <input type="tel" placeholder="mobile" required>
+        </label>
+        <div class="btn">
+            <button type="button" id="back2">back</button>
+            <button type="button">submit</button>
+        </div>
+    </form>
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>step 1</small></div>
+        <div class="step-col"><small>step 2</small></div>
+        <div class="step-col"><small>step 3</small></div>
+    </div>
+</div>
+<script>
+    const form1 = document.getElementById("form1");
+    const form2 = document.getElementById("form2");
+    const form3 = document.getElementById("form3");
+    const next1 = document.getElementById("next1");
+    const next2 = document.getElementById("next2");
+    const back1 = document.getElementById("back1");
+    const back2 = document.getElementById("back2");
+    const progress = document.getElementById("progress");
+    next1.onclick = function () {
+        form1.style.left = "-450px";
+        form2.style.left = "40px";
+        progress.style.width = "240px";
+    }
+    back1.onclick = function () {
+        form1.style.left = "40px";
+        form2.style.left = "-450px";
+        progress.style.width = "120px";
+    }
+    next2.onclick = function () {
+        form2.style.left = "-450px";
+        form3.style.left = "40px";
+        progress.style.width = "360px";
+    }
+    back2.onclick = function () {
+        form2.style.left = "40px";
+        form3.style.left = "-450px";
+        progress.style.width = "450px";
+    }
+</script>
+</body>
+</html>
